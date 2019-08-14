@@ -21,6 +21,7 @@ class Service:
     # Logs user in by comparing input name and password to user list.
     def login(self, inName, inPassword):
         index = 0
+        found = False
         # Parse through the user list and find the matching user and password.
         for i in users.userList:
             if i.getName() == inName and i.getPassword() == inPassword:
@@ -29,8 +30,13 @@ class Service:
                 print('--------------------')
                 print('Login Success!')
                 print('--------------------')
+                found = True
                 self.state = 'second'
             index += 1
+        if not found:
+            print('--------------------')
+            print('User and/or password not found.')
+            print('--------------------')
 
     # Prints the current balance of the user.
     def viewBalance(self):
@@ -84,6 +90,5 @@ class Service:
     def logout(self):
         print('--------------------')
         logging.debug('User ' + users.userList[users.currentUser].getName() + ' logged out.')
-        print('--------------------')
         self.state = 'first'
 

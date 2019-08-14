@@ -22,6 +22,7 @@ class Controller:
                     print('--------------------')
                     inputName = input('Please enter your name: ')
                     inputPass = input('Please enter a password for your account: ')
+                    print('--------------------')
                     self.service.register(inputName, inputPass)
                 elif choice == '2':
                     loginName = input('Please enter your name: ')
@@ -52,6 +53,7 @@ class Controller:
                     # Handling error of non-integer input from user.
                     except ValueError:
                         logging.error('Withdrawal input was not a number')
+                        print('--------------------')
                         print('Input was not a numerical value.')
                         print('--------------------')
                 elif choice == '3':
@@ -62,6 +64,7 @@ class Controller:
                     # Handling error of non-integer input from user.
                     except ValueError:
                         logging.error('Deposit input was not a number')
+                        print('--------------------')
                         print('Input was not a numerical value.')
                         print('--------------------')
                         pass
