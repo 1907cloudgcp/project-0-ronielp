@@ -1,5 +1,5 @@
 class User():
-    def __init__(self, inName='', inPassword='', inBalance=0, inTransactions=[]):
+    def __init__(self, inName='', inPassword='', inBalance=0.00, inTransactions=[]):
         self.name = inName
         self.password = inPassword
         self.balance = inBalance
